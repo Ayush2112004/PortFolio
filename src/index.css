@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #030712;
+  --color-secondary-bg: #08111F;
+  --color-primary-accent: #00F5A0;
+  --color-secondary-accent: #7C3AED;
+  --color-highlight: #00E5FF;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+
+  --font-display: "Space Grotesk", "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-code: "Geist Mono", monospace;
+}
+
+@layer base {
+  :root {
+    --background: #030712;
+    --secondary-bg: #08111F;
+    --primary-accent: #00F5A0;
+    --secondary-accent: #7C3AED;
+    --highlight: #00E5FF;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --hover-glow: rgba(0, 245, 160, 0.4);
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--text-primary)] font-body antialiased overflow-x-hidden;
+    cursor: none; /* Hide default cursor since we use a custom one */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-[var(--card-bg)] backdrop-blur-[20px] border border-white/10;
+  }
+  
+  .glass-hover {
+    @apply hover:border-[var(--primary-accent)] hover:shadow-[0_0_20px_var(--hover-glow)] transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary-accent)] to-[var(--highlight)];
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary-accent);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-accent);
+  }
+}
+
+/* Lenis smooth scrolling reset */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
