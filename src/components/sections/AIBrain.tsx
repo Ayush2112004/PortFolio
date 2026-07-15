@@ -91,7 +91,7 @@ export const AIBrain = () => {
           </p>
         </div>
 
-        <div className="relative w-full max-w-4xl aspect-square md:aspect-video flex items-center justify-center">
+        <div className="relative w-full h-[500px] md:h-auto md:aspect-video flex items-center justify-center">
           
           {/* Central Brain Core */}
           <motion.div 
@@ -157,7 +157,7 @@ export const AIBrain = () => {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="absolute z-40 bottom-[-50px] md:bottom-[10%] left-1/2 -translate-x-1/2 w-[90%] md:w-[400px] glass p-6 rounded-2xl border pointer-events-none"
+                className="absolute z-40 bottom-0 md:bottom-[10%] left-1/2 -translate-x-1/2 w-[95%] md:w-[400px] glass p-5 md:p-6 rounded-2xl border pointer-events-none"
                 style={{ borderColor: `${activeData.color}50`, boxShadow: `0 10px 30px ${activeData.color}20` }}
               >
                 <div className="flex items-center gap-3 mb-4 border-b border-white/10 pb-4">

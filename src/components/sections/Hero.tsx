@@ -88,7 +88,7 @@ const AICore = () => {
 const FloatingCard = ({ delay, icon: Icon, title, value, className }: any) => {
   return (
     <motion.div
-      className={`absolute glass p-4 rounded-xl flex items-center gap-4 ${className}`}
+      className={`absolute glass p-4 rounded-xl hidden lg:flex items-center gap-4 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.8, ease: "easeOut" }}

@@ -130,7 +130,7 @@ export const TechStack = () => {
           </div>
 
           {/* Tech Details */}
-          <div className="lg:col-span-8 relative min-h-[400px]">
+          <div className="lg:col-span-8 relative">
             <AnimatePresence mode="wait">
               {categories.map(
                 (cat) =>
@@ -141,7 +141,7 @@ export const TechStack = () => {
                       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
-                      className="grid grid-cols-1 md:grid-cols-2 gap-6 absolute inset-0"
+                      className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
                     >
                       {cat.techs.map((tech, idx) => (
                         <div key={tech.name} className="glass p-6 rounded-2xl group hover:border-[var(--primary-accent)]/50 transition-colors duration-300">
