@@ -5,14 +5,12 @@ import { Send, Mail, ShieldAlert } from "lucide-react";
 export const Contact = () => {
   const [focused, setFocused] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    // We let the native form submission handle the POST request to FormSubmit
-  };
+
 
   return (
     <section className="relative py-32 overflow-hidden" id="contact">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        
+
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -38,7 +36,7 @@ export const Contact = () => {
         >
           {/* Animated scanning line */}
           <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-            <motion.div 
+            <motion.div
               className="w-full h-1 bg-[var(--primary-accent)]/30 blur-sm absolute top-0"
               animate={{ y: ["0%", "1000%"] }}
               transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
@@ -49,14 +47,14 @@ export const Contact = () => {
             {/* FormSubmit Configuration */}
             <input type="hidden" name="_subject" value="New Mission Log from AI-OS Portfolio!" />
             <input type="hidden" name="_template" value="box" />
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative">
                 <label className="font-mono text-xs text-[var(--text-secondary)] mb-2 block uppercase tracking-wider">
                   Identification
                 </label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   name="name"
                   required
                   onFocus={() => setFocused("name")}
@@ -70,8 +68,8 @@ export const Contact = () => {
                 <label className="font-mono text-xs text-[var(--text-secondary)] mb-2 block uppercase tracking-wider">
                   Comm_Address
                 </label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="email"
                   required
                   onFocus={() => setFocused("email")}
@@ -87,7 +85,7 @@ export const Contact = () => {
               <label className="font-mono text-xs text-[var(--text-secondary)] mb-2 block uppercase tracking-wider">
                 Data_Payload
               </label>
-              <textarea 
+              <textarea
                 name="message"
                 required
                 rows={5}
@@ -99,7 +97,7 @@ export const Contact = () => {
               {focused === "message" && <div className="absolute right-3 top-[38px] w-2 h-2 rounded-full bg-[var(--primary-accent)] animate-pulse" />}
             </div>
 
-            <button 
+            <button
               type="submit"
               className="hover-trigger relative group w-full md:w-auto self-end px-8 py-4 rounded-lg bg-[var(--primary-accent)] text-[#030712] font-bold overflow-hidden transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
             >
@@ -128,8 +126,8 @@ export const Footer = () => (
         &copy; {new Date().getFullYear()} Ayush Rathi. All rights reserved.
       </div>
       <div className="flex gap-4">
-        <a 
-          href="mailto:ayushrathi125@gmail.com" 
+        <a
+          href="mailto:ayushrathi125@gmail.com"
           className="text-[var(--text-secondary)] hover:text-[var(--primary-accent)] transition-colors hover-trigger flex items-center justify-center w-10 h-10 rounded-full border border-white/5 bg-[var(--background)]"
           title="ayushrathi125@gmail.com"
         >
