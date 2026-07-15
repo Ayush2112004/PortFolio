@@ -125,8 +125,8 @@ export const AIBrain = () => {
                   transform: `translate(${lobe.position.x}px, ${lobe.position.y}px)`
                 }}
                 animate={{
-                  x: window.innerWidth < 768 ? lobe.position.x * 0.6 : lobe.position.x * 1.5,
-                  y: window.innerWidth < 768 ? lobe.position.y * 0.6 : lobe.position.y * 1.5,
+                  x: window.innerWidth < 768 ? lobe.position.x * 0.95 : lobe.position.x * 1.5,
+                  y: window.innerWidth < 768 ? lobe.position.y * 0.95 : lobe.position.y * 1.5,
                   scale: isActive ? 1.2 : isDimmed ? 0.8 : 1,
                   opacity: isDimmed ? 0.4 : 1,
                 }}
