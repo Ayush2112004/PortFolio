@@ -47,6 +47,8 @@ export const Contact = () => {
             {/* FormSubmit Configuration */}
             <input type="hidden" name="_subject" value="New Mission Log from AI-OS Portfolio!" />
             <input type="hidden" name="_template" value="box" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ''} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative">
