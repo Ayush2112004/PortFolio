@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, ShieldAlert } from "lucide-react";
+import { Send, Mail, ShieldAlert, Linkedin } from "lucide-react";
 
 export const Contact = () => {
   const [focused, setFocused] = useState<string | null>(null);
@@ -128,6 +128,15 @@ export const Footer = () => (
         &copy; {new Date().getFullYear()} Ayush Rathi. All rights reserved.
       </div>
       <div className="flex gap-4">
+        <a
+          href="https://www.linkedin.com/in/ayush-rathi-6132232a6"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--text-secondary)] hover:text-[var(--primary-accent)] transition-colors hover-trigger flex items-center justify-center w-10 h-10 rounded-full border border-white/5 bg-[var(--background)]"
+          title="LinkedIn Profile"
+        >
+          <Linkedin size={18} />
+        </a>
         <a
           href="mailto:ayushrathi125@gmail.com"
           className="text-[var(--text-secondary)] hover:text-[var(--primary-accent)] transition-colors hover-trigger flex items-center justify-center w-10 h-10 rounded-full border border-white/5 bg-[var(--background)]"
