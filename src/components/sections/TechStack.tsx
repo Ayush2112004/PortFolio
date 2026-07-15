@@ -108,7 +108,14 @@ export const TechStack = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                onClick={() => setActiveCategory(cat.id)}
+                onClick={() => {
+                  setActiveCategory(cat.id);
+                  if (window.innerWidth < 1024) {
+                    setTimeout(() => {
+                      document.getElementById('tech-details')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                  }
+                }}
                 className={`relative p-4 rounded-xl flex items-center gap-4 text-left transition-all duration-300 overflow-hidden ${
                   activeCategory === cat.id
                     ? "glass border-[var(--primary-accent)] shadow-[0_0_20px_rgba(0,245,160,0.15)]"
@@ -130,7 +137,7 @@ export const TechStack = () => {
           </div>
 
           {/* Tech Details */}
-          <div className="lg:col-span-8 relative">
+          <div id="tech-details" className="lg:col-span-8 relative scroll-mt-24">
             <AnimatePresence mode="wait">
               {categories.map(
                 (cat) =>

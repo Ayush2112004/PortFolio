@@ -88,7 +88,7 @@ const AICore = () => {
 const FloatingCard = ({ delay, icon: Icon, title, value, className }: any) => {
   return (
     <motion.div
-      className={`absolute glass p-4 rounded-xl hidden lg:flex items-center gap-4 ${className}`}
+      className={`absolute glass p-3 md:p-4 rounded-xl flex flex-col md:flex-row items-center text-center md:text-left gap-2 md:gap-4 z-20 max-w-[140px] md:max-w-none ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.8, ease: "easeOut" }}
@@ -97,12 +97,12 @@ const FloatingCard = ({ delay, icon: Icon, title, value, className }: any) => {
         y: useTransform(useScroll().scrollY, [0, 500], [0, -50 + Math.random() * -100])
       }}
     >
-      <div className="p-3 bg-[var(--secondary-bg)] rounded-lg text-[var(--primary-accent)]">
-        <Icon size={20} />
+      <div className="p-2 md:p-3 bg-[var(--secondary-bg)] rounded-lg text-[var(--primary-accent)]">
+        <Icon size={18} className="md:w-5 md:h-5" />
       </div>
-      <div>
-        <div className="text-xs text-[var(--text-secondary)] font-mono">{title}</div>
-        <div className="font-display font-bold text-sm text-[var(--text-primary)]">{value}</div>
+      <div className="flex-1">
+        <div className="text-[10px] md:text-xs text-[var(--text-secondary)] font-mono mb-1">{title}</div>
+        <div className="font-display font-bold text-xs md:text-sm text-[var(--text-primary)] leading-tight">{value}</div>
       </div>
     </motion.div>
   );
@@ -187,28 +187,28 @@ export const Hero = () => {
             icon={Code2}
             title="ALGORITHMS"
             value="Data Structures & Algorithms"
-            className="top-[10%] left-[5%] md:left-[-10%]"
+            className="top-[5%] left-[2%] md:top-[10%] md:left-[-10%]"
           />
           <FloatingCard 
             delay={1.0}
             icon={Terminal}
             title="EDUCATION"
             value="8.5 CGPA"
-            className="top-[70%] left-[10%] md:left-[-5%]"
+            className="top-[70%] left-[2%] md:left-[-5%]"
           />
           <FloatingCard 
             delay={1.2}
             icon={Database}
             title="STACK"
             value="MERN Active"
-            className="top-[20%] right-[5%] md:right-[-10%]"
+            className="top-[15%] right-[2%] md:top-[20%] md:right-[-10%]"
           />
           <FloatingCard 
             delay={1.4}
             icon={GitBranch}
             title="CERTIFICATIONS"
             value="AWS & Azure"
-            className="top-[80%] right-[10%] md:right-[-5%]"
+            className="top-[80%] right-[2%] md:right-[-5%]"
           />
         </div>
 
